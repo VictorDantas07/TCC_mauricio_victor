@@ -1,6 +1,7 @@
 package com.example.tcc2.ui.main;
 
 import android.content.Context;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
@@ -10,6 +11,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.tcc2.ConsultarList;
 import com.example.tcc2.Dados;
+import com.example.tcc2.Home;
 import com.example.tcc2.R;
 
 /**
@@ -23,7 +25,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     String dados;
 
     @StringRes
-    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2};
+    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_3,R.string.tab_text_1, R.string.tab_text_2};
     private final Context mContext;
 
     public SectionsPagerAdapter(Context context, FragmentManager fm) {
@@ -54,12 +56,16 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         Fragment frag = null;
         switch (position){
             case 0:
+                frag = new Home(getInfo());
+                break;
+            case 1:
                 frag = new ConsultarList(getDados());
                 break;
 
-            case 1:
+            case 2:
                 frag = new Dados(getInfo());
                 break;
+
         }
         return frag;
     }
@@ -72,7 +78,6 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        // Show 2 total pages.
-        return 2;
+        return 3;
     }
 }

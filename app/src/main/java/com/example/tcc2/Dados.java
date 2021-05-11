@@ -38,7 +38,6 @@ public class Dados extends Fragment {
 
         try {
             JSONObject jsonObj = new JSONObject(info);
-            Toast.makeText(getActivity(), "Bem-Vindo "+ jsonObj.getString("nome"), Toast.LENGTH_SHORT).show();
             n.setText(jsonObj.getString("nome"));
             s.setText(jsonObj.getString("sobrenome"));
             e.setText(jsonObj.getString("email"));
