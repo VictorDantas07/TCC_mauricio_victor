@@ -57,7 +57,7 @@ public class ConsultarList extends Fragment implements AdapterView.OnItemClickLi
 
             while (x < tamanho){
                 jsonObject = array.getJSONObject(x);
-                texto = jsonObject.getString("categoria")+" - Descrição: "+jsonObject.getString("descricao");
+                texto = jsonObject.getString("categoria");
                 dadosArr[x] = texto;
                 x = x+1;
             }
