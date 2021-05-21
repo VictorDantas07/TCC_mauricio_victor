@@ -33,7 +33,7 @@ public class ConsultarList extends Fragment implements AdapterView.OnItemClickLi
     ArrayAdapter<String> adapter;
     String dados;
     String[] dadosArr = null;
-//    String[] teste = {"TESTE","TESTE","TESTE","TESTE","TESTE","TESTE"};
+
 
     public ConsultarList(String dados){
         this.dados = dados;
