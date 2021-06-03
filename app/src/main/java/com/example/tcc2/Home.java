@@ -71,8 +71,8 @@ public class Home extends Fragment {
             btnSobre.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-//                    Intent it = new Intent(getContext(), Contato.class);
-//                    startActivity(it);
+                    Intent it = new Intent(getContext(), Sobre.class);
+                    startActivity(it);
 
                 }
             });

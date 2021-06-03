@@ -28,7 +28,7 @@ public class Dados extends Fragment {
         View view = inflater.inflate(R.layout.dados, container, false);
 
         n = view.findViewById(R.id.dsNome);
-        s = view.findViewById(R.id.dsEmail);
+        s = view.findViewById(R.id.dsSobrenome);
         e = view.findViewById(R.id.dsEmail);
         c = view.findViewById(R.id.dsCelular);
         cp = view.findViewById(R.id.dsCPF);
