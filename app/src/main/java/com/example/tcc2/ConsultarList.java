@@ -60,12 +60,38 @@ public class ConsultarList extends Fragment {
         TextView tV3 = popupView.findViewById(R.id.popup_details3);
         TextView tV4 = popupView.findViewById(R.id.popup_details4);
         TextView tV5 = popupView.findViewById(R.id.popup_details5);
-//        texto = array.getString("categoria");
-        tV1.setText("Dados da Conta: "+ array.getString("descricao"));
-        tV2.setText("Categoria: "+ array.getString("categoria"));
-        tV3.setText("Usuário: "+ array.getString("usuario"));
-        tV4.setText("Senha: "+ array.getString("senha"));
-        tV5.setText("OBS: "+ array.getString("obs"));
+        TextView tV6 = popupView.findViewById(R.id.popup_details6);
+        TextView tV7 = popupView.findViewById(R.id.popup_details7);
+        TextView tV8 = popupView.findViewById(R.id.popup_details8);
+        TextView tV9 = popupView.findViewById(R.id.popup_details9);
+
+        if(array.has("agencia")) {
+            tV1.setText("Dados da Conta: " + array.getString("descricao"));
+            tV2.setText("Categoria: " + array.getString("categoria"));
+            tV3.setText("Agência: " + array.getString("agencia"));
+            tV4.setText("Conta: " + array.getString("conta"));
+            tV5.setText("Senha: " + array.getString("senha"));
+            tV6.setText("OBS: " + array.getString("obs"));
+
+        }else if(array.has("placa")){
+            tV1.setText("Dados da Conta: " + array.getString("descricao"));
+            tV2.setText("Categoria: " + array.getString("categoria"));
+            tV3.setText("Placa: " + array.getString("placa"));
+            tV4.setText("Renavam: " + array.getString("renavam"));
+            tV5.setText("OBS: " + array.getString("obs"));
+            tV6.setText("Licenciamento: " + array.getString("totalLicenciamento"));
+            tV7.setText("Dpvat: " + array.getString("totalDpvat"));
+            tV8.setText("Serviços: " + array.getString("totalServicosDetran"));
+            tV9.setText("Débitos? " + array.getString("temDebito"));
+
+        }else{
+            tV1.setText("Dados da Conta: "+ array.getString("descricao"));
+            tV2.setText("Categoria: "+ array.getString("categoria"));
+            tV3.setText("Usuário: "+ array.getString("usuario"));
+            tV4.setText("Senha: "+ array.getString("senha"));
+            tV5.setText("OBS: "+ array.getString("obs"));
+        }
+
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             popupWindow.setElevation(20);
