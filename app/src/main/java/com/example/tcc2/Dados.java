@@ -34,7 +34,7 @@ public class Dados extends Fragment {
         cp = view.findViewById(R.id.dsCPF);
         d = view.findViewById(R.id.dtNasc);
 
-        Log.i("Info", info);
+//        Log.i("Info", info);
 
         try {
             JSONObject jsonObj = new JSONObject(info);

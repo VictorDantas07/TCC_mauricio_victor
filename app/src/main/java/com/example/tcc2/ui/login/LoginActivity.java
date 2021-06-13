@@ -158,7 +158,7 @@ public class LoginActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(PessoaObj pessoa){
-//            Log.i("INFO", dados);
+            Log.i("INFO", dados);
             Intent it = new Intent(LoginActivity.this, MainActivity.class);
             it.putExtra("info", info);
             it.putExtra("dados", dados);

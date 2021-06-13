@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:background="#F1EFEF">
+
+    <TextView
+        android:id="@+id/popup_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:text="1"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/popup_details2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentLeft="true"
+        android:text="2"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/popup_details3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentLeft="true"
+        android:text="3"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/popup_details4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="85dp"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentLeft="true"
+        android:text="4"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/popup_details5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentLeft="true"
+        android:text="5"
+        android:textSize="12sp"/>
+
+</RelativeLayout>
