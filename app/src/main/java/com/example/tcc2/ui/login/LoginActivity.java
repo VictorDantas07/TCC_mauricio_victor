@@ -140,7 +140,11 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private class GetJson extends AsyncTask<Void, Void, PessoaObj> {
-        String dados = null, info = null;
+
+        String dados = null, info = null, senha = null;
+        Integer tamanho = null;
+        PessoaObj obj;
+
         @Override
         protected void onPreExecute(){
             load = ProgressDialog.show(LoginActivity.this, "Por favor Aguarde ...", "Recuperando Informações do Servidor...");
@@ -148,42 +152,51 @@ public class LoginActivity extends AppCompatActivity {
 
         @Override
         protected PessoaObj doInBackground(Void... params) {
+
             Utils util = new Utils();
             @SuppressLint("WrongThread") String url = "http://tcc2mauriciovictor-com.umbler.net/dados/"+usernameEditText.getText().toString();
             @SuppressLint("WrongThread") String url2 = "http://tcc2mauriciovictor-com.umbler.net/login/"+usernameEditText.getText().toString();
             dados = util.getDados(url);
             info = util.getInformacao(url2);
+            obj = util.getInformacao_obj(url2);
             return null;
         }
 
         @Override
         protected void onPostExecute(PessoaObj pessoa){
-            Log.i("INFO", dados);
-            Intent it = new Intent(LoginActivity.this, MainActivity.class);
-            it.putExtra("info", info);
-            it.putExtra("dados", dados);
-            startActivity(it);
-//            try {
-//                String nome = null;
-//                String comparar = "inexistente";
-//                JSONObject jsonObj = new JSONObject(info);
-//                nome = jsonObj.getString("nome");
-//                Log.i("NOME", jsonObj.getString("nome"));
-//                Toast.makeText(LoginActivity.this, nome, Toast.LENGTH_SHORT).show();
-//                if(nome == comparar){
-//                    Log.i("TEste", "caiu");
-//                    Toast.makeText(LoginActivity.this, "NULO", Toast.LENGTH_SHORT).show();
-//                    load.dismiss();
-//                }else{
-//                    Log.i("ELSE", "caiu");
-//                    Intent it = new Intent(LoginActivity.this, MainActivity.class);
-//                    it.putExtra("info", info);
-//                    it.putExtra("dados", dados);
-//                    startActivity(it);
-//                }
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
+
+            String password = passwordEditText.getText().toString();
+            String errosenha = "A senha está incorreta. Digite o email e senha cadastrados!";
+            String errouser = "Este email não está cadastrado. Digite o email que foi cadastrado no nosso site!";
+            Log.i("Dados", dados);
+
+            try {
+               JSONObject jsonObj = new JSONObject(this.dados);
+               tamanho = Integer.parseInt(jsonObj.getString("tamanho"));
+                if (tamanho == 0){
+                    Toast.makeText(getApplicationContext(), errouser, Toast.LENGTH_LONG).show();
+                    Intent it = new Intent(LoginActivity.this, LoginActivity.class);
+                    startActivity(it);
+                }
+                else {
+                    senha = obj.getSenha();
+                    if (senha.equals(password)){
+                        Intent it = new Intent(LoginActivity.this, MainActivity.class);
+                        it.putExtra("info", info);
+                        it.putExtra("dados", dados);
+                        startActivity(it);
+
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext(), errosenha, Toast.LENGTH_LONG).show();
+                        Intent it = new Intent(LoginActivity.this, LoginActivity.class);
+                        startActivity(it);
+                    }
+                }
+
+            }catch (JSONException e) {
+               e.printStackTrace();
+           }
             load.dismiss();
         }
 

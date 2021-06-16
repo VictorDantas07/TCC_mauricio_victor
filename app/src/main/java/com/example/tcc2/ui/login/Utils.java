@@ -12,15 +12,15 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Utils {
-//    public PessoaObj getInformacao(String end){
-//        String json;
-//        PessoaObj retorno;
-//        json = NetworkUtils.getJSONFromAPI(end);
-//        Log.i("Resultado", json);
-//        retorno = parseJson(json);
-//
-//        return retorno;
-//    }
+    public PessoaObj getInformacao_obj(String end){
+        String json;
+        PessoaObj retorno;
+        json = NetworkUtils.getJSONFromAPI(end);
+        Log.i("Resultado", json);
+        retorno = parseJson(json);
+
+        return retorno;
+    }
 
     public String getInformacao(String end){
         String json;

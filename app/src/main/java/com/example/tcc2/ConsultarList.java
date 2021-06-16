@@ -85,7 +85,7 @@ public class ConsultarList extends Fragment {
             tV9.setText("Débitos? " + array.getString("temDebito"));
 
         }else{
-            tV1.setText("Dados da Conta: "+ array.getString("descricao"));
+            tV1.setText("Dados da Conta: \n"+ array.getString("descricao"));
             tV2.setText("Categoria: "+ array.getString("categoria"));
             tV3.setText("Usuário: "+ array.getString("usuario"));
             tV4.setText("Senha: "+ array.getString("senha"));
@@ -145,6 +145,5 @@ public class ConsultarList extends Fragment {
 
         return view;
     }
-
 
 }
